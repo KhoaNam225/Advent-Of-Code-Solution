@@ -292,9 +292,6 @@ public class Solution {
         while (!pq.isEmpty()) {
             GameState currState = pq.poll();
             visited.add(currState.toString());
-            if (currState.getEstimationCost() <= 0) {
-                System.out.println(String.format("Cost: %d\n Estimated: %d\n Total: %d\n \n%s", currState.cost, currState.getEstimationCost(), currState.getEstimationCost() + currState.cost, currState.toString()));
-            }
             if (currState.isTarget()) return currState;
 
             for (GameState nextState : currState.generateNewState()) {
